@@ -2,11 +2,11 @@ import { DataTypes } from 'sequelize';
 import sequelize from './index.js';
 
 var ProductVariety = sequelize.define(
-  'Product-Variety',
+  'ProductVariety',
   {
     // Model attributes are defined here
     size: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     color: {
@@ -14,19 +14,15 @@ var ProductVariety = sequelize.define(
       allowNull: false,
     },
     quantity: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     price: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    product_imageId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     productId: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },

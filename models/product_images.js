@@ -10,12 +10,12 @@ var ProductImages = sequelize.define(
       allowNull: false,
     },
     image_url: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING, 
       allowNull: false,
     },
     productVarietyId: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false, 
     },
   },
   { timestamps: true }

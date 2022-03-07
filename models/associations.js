@@ -1,6 +1,6 @@
-import ProductVariety from 'product-varieties.js';
-import Product from 'product.js';
-import ProductImages from 'product-images.js';
+import ProductVariety from './product_varieties.js';
+import Product from './products.js';
+import ProductImages from './product_images.js';
 
 //Associations
 

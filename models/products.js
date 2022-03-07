@@ -11,16 +11,14 @@ var Product = sequelize.define('Product', {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  product_varieties: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   date_uploaded: {
     type: DataTypes.DATE,
+    defaultValue: Date.now(),
     allowNull: false,
   },
   date_edited: {
     type: DataTypes.DATE,
+    defaultValue: Date.now(),
     allowNull: false,
   },
 });
