@@ -7,12 +7,11 @@ import Joi from 'joi';
 
 const validateProductVariety = (product_variety) => {
   const schema = Joi.object({
-    size: Joi.number().required(),
+    size: Joi.string().required(),
     color: Joi.string().required(),
     quantity: Joi.string().required(),
-    rating: Joi.number().required(),
-    product_imageId: [Joi.number()],
-    price: Joi.number().required(),
+    price: Joi.string().required(),
+    productId: Joi.number().required(),
   });
   return schema.validate(product_variety);
 };
