@@ -6,6 +6,7 @@ import healthCheck from './api/v1/routes/healthCheck.js';
 import errorMiddleware from './middlewares/error.js';
 import products from './api/v1/routes/products.js';
 import productVarieties from './api/v1/routes/productVarieties.js';
+import productImages from './api/v1/routes/product_images.js';
 
 const app = express();
 
@@ -21,6 +22,7 @@ import './models/index.js';
 app.use('/api/v1', healthCheck);
 app.use('/api/v1', products);
 app.use('/api/v1', productVarieties);
+app.use('/api/v1', productImages);
 
 //Error Handler Middleware
 app.use(errorMiddleware);

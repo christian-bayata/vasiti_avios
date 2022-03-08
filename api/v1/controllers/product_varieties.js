@@ -3,11 +3,7 @@ import helper from '../../../helper/helper.js';
 import validateProductVarieties from '../../../input-validation/product_varieties.js/validateProductVarieties.js';
 import ErrorHandler from '../../../utils/errorHandler.js';
 import status from 'http-status';
-import {
-  Product,
-  ProductVariety,
-  ProductImages,
-} from '../../../models/associations.js';
+import { Product, ProductVariety } from '../../../models/associations.js';
 
 const productVarietiesController = {
   /**
@@ -59,10 +55,6 @@ const productVarietiesController = {
    */
   async updateProductVariant(req, res, next) {
     return helper(async () => {
-      //Input validation with Joi
-      // const { error } = await validateProductVarieties(req.body);
-      // if (error)
-      //   return res.status(status.BAD_REQUEST).send(error.details[0].message);
       let productVariety = await ProductVariety.findByPk(req.params.id);
       if (!productVariety) {
         return next(
@@ -76,6 +68,32 @@ const productVarietiesController = {
       res.status(status.OK).send({
         success: true,
         message: 'Product variety was successfully updated',
+      });
+    }, next);
+  },
+  /**
+   * @Responsibilty - Delete product varieties;
+   * @param req
+   * @param res
+   * @param next
+   * @route - /api/v1/delete/product/variety/:id
+   * @returns {Object}
+   */
+  async deleteProductVariant(req, res, next) {
+    return helper(async () => {
+      let productVariety = await ProductVariety.findByPk(req.params.id);
+      if (!productVariety) {
+        return next(
+          new ErrorHandler(
+            'Product variety with the given id does not exist',
+            status.NOT_FOUND
+          )
+        );
+      }
+      await productVariety.destroy({ where: { id: req.params.id } });
+      res.status(status.OK).send({
+        success: true,
+        message: 'Product variant was succcessfully deleted',
       });
     }, next);
   },

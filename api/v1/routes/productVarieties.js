@@ -8,5 +8,8 @@ router
 router
   .route('/update/product/variety/:id')
   .put(productVarietiesController.updateProductVariant);
+router
+  .route('/delete/product/variety/:id')
+  .delete(productVarietiesController.deleteProductVariant);
 
 export default router;

@@ -1,8 +1,8 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './index.js';
 
-var ProductImages = sequelize.define(
-  'Product-Images',
+var ProductImage = sequelize.define(
+  'ProductImages',
   {
     // Model attributes are defined here
     image_name: {
@@ -10,15 +10,15 @@ var ProductImages = sequelize.define(
       allowNull: false,
     },
     image_url: {
-      type: DataTypes.STRING, 
+      type: DataTypes.STRING,
       allowNull: false,
     },
     productVarietyId: {
       type: DataTypes.INTEGER,
-      allowNull: false, 
+      allowNull: false,
     },
   },
   { timestamps: true }
 );
 
-export default ProductImages;
+export default ProductImage;

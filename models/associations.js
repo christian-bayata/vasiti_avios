@@ -1,6 +1,6 @@
 import ProductVariety from './product_varieties.js';
 import Product from './products.js';
-import ProductImages from './product_images.js';
+import ProductImage from './product_images.js';
 
 //Associations
 
@@ -9,7 +9,7 @@ import ProductImages from './product_images.js';
 Product.hasMany(ProductVariety, {
   foreignKey: { name: 'productId', allowNull: false },
 });
-ProductVariety.hasMany(ProductImages, {
+ProductVariety.hasMany(ProductImage, {
   foreignKey: { name: 'productVarietyId', allowNull: false },
 });
 
@@ -17,8 +17,8 @@ ProductVariety.hasMany(ProductImages, {
 ProductVariety.belongsTo(Product, {
   foreignKey: { name: 'productId', allowNull: false },
 });
-ProductImages.belongsTo(ProductVariety, {
+ProductImage.belongsTo(ProductVariety, {
   foreignKey: { name: 'productVarietyId', allowNull: false },
 });
 
-export { Product, ProductImages, ProductVariety };
+export { Product, ProductImage, ProductVariety };
