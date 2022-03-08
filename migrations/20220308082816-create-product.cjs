@@ -14,10 +14,10 @@ module.exports = {
       product_description: {
         type: Sequelize.STRING
       },
-      date_uploaded: {
+      createdAt: {
         type: Sequelize.DATE
       },
-      date_edited: {
+      updatedAt: {
         type: Sequelize.DATE
       },
       createdAt: {

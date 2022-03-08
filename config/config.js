@@ -1,10 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
-import {
-  DEV_DATABASE_URL,
-  TEST_DATABASE_URL,
-  ENVIRONMENT,
-} from '../settings.js';
+import { DEV_DATABASE_URL, TEST_DATABASE_URL } from '../settings.js';
 
 const envConfigs = {
   development: {
