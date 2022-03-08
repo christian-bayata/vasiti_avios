@@ -14,11 +14,7 @@ ProductVariety.hasMany(ProductImage, {
 });
 
 //BelongsTo
-ProductVariety.belongsTo(Product, {
-  foreignKey: { name: 'productId', allowNull: false },
-});
-ProductImage.belongsTo(ProductVariety, {
-  foreignKey: { name: 'productVarietyId', allowNull: false },
-});
+ProductVariety.belongsTo(Product);
+ProductImage.belongsTo(ProductVariety);
 
 export { Product, ProductImage, ProductVariety };

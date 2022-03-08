@@ -12,7 +12,7 @@ const envConfigs = {
     dialect: 'mysql',
   },
   production: {
-    url: 'mysql://b4f3322cc5b93c:b0804dd8@us-cdbr-east-05.cleardb.net/heroku_29594656521cb42?reconnect=true',
+    url: '//mysql://b67a5484c7ec7b:c1828df1@us-cdbr-east-05.cleardb.net/heroku_77cdc0840c1f69d?reconnect=true',
     dialect: 'mysql',
   },
 };
