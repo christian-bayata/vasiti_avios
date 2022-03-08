@@ -3,11 +3,7 @@ import { getPagination, getPagingData } from '../../../helper/pagination.js';
 import helper from '../../../helper/helper.js';
 import validateProduct from '../../../input-validation/products/validateProduct.js';
 import status from 'http-status';
-import {
-  Product,
-  ProductVariety,
-  ProductImages,
-} from '../../../models/associations.js';
+import { Product } from '../../../models/associations.js';
 
 const productsController = {
   /**
@@ -56,6 +52,32 @@ const productsController = {
       .catch((err) => {
         return next(new ErrorHandler(err.message, status.BAD_REQUEST));
       });
+  },
+  /**
+   * @Responsibilty - Updates product varieties
+   * @param req
+   * @param res
+   * @param next
+   * @route - /api/v1/update/product/:id
+   * @returns {Object}
+   */
+  async updateProduct(req, res, next) {
+    return helper(async () => {
+      let product = await Product.findByPk(req.params.id);
+      if (!product) {
+        return next(
+          new ErrorHandler(
+            'Product with the given id does not exist',
+            status.NOT_FOUND
+          )
+        );
+      }
+      await product.update(req.body, { where: { id: req.params.id } });
+      res.status(status.OK).send({
+        success: true,
+        message: 'Product was successfully updated',
+      });
+    }, next);
   },
 };
 

@@ -50,7 +50,6 @@ const productVarietiesController = {
     }, next);
   },
   /**
-   * @Author - "Edomaruse, Frank"
    * @Responsibilty - Updates product varieties
    * @param req
    * @param res
