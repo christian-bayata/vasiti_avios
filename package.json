@@ -9,7 +9,8 @@
     "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
     "dev": "SET NODE_ENV=development&&nodemon --exec babel-node app.js",
     "test": "SET NODE_ENV=test&&jest --runInBand --verbose --forceExit --detectOpenHandles ",
-    "prod": "SET NODE_ENV=production&&nodemon --exec babel-node app.js"
+    "prod": "SET NODE_ENV=production&&nodemon --exec babel-node app.js",
+    "build": "cd frontend && npm install && npm run build"
   },
   "type": "module",
   "author": "Edomaruse, Frank",
@@ -25,34 +26,21 @@
     "eslint": "^8.8.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
-    "jest": "^27.5.1",
     "nodemon": "^2.0.15",
-    "prettier": "^2.5.1",
-    "promise-mysql2": "^1.0.0",
-    "supertest": "^6.2.2"
+    "prettier": "^2.5.1"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "crypto": "^1.0.1",
     "dotenv": "^15.0.0",
     "express": "^4.17.2",
     "express-async-errors": "^3.1.1",
     "http-status": "^1.5.0",
     "joi": "^17.6.0",
-    "jsonwebtoken": "^8.5.1",
-    "lodash": "^4.17.21",
     "mongodb": "^4.3.1",
     "mongoose": "^6.1.9",
     "morgan": "^1.10.0",
     "mysql2": "^2.3.3",
-    "nodemailer": "^6.7.2",
-    "nodemailer-smtp-transport": "^2.7.4",
-    "passport": "^0.5.2",
-    "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
     "sequelize": "^6.15.0",
-    "sequelize-cli": "^6.4.1",
-    "stripe": "^8.203.0",
-    "uuid": "^8.3.2"
+    "sequelize-cli": "^6.4.1"
   }
 }
